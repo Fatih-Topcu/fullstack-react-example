@@ -11,8 +11,9 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run client\" \"npm run server\" \"npm run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "webhook": "lt -p 5000 -s fatihly-lizard-101"
   },
   "author": "",
   "license": "ISC",
@@ -21,12 +22,16 @@
     "concurrently": "^6.4.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
+    "localtunnel": "^2.0.2",
+    "lodash": "^4.17.21",
     "mongoose": "^6.0.14",
     "nodemon": "^2.0.15",
     "passport": "^0.5.0",
     "passport-google-oauth20": "^2.0.0",
+    "path-parser": "^6.1.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
+    "sendgrid": "^5.2.3",
     "stripe": "^8.191.0"
   }
 }
